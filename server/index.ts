@@ -1,9 +1,13 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
+import path from "path";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 app.use(express.json());
+
+
+
 app.use(express.static(path.join(__dirname, "../client")));
 app.use(express.urlencoded({ extended: false }));
 
