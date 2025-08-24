@@ -4,6 +4,7 @@ import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "../client")));
 app.use(express.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
